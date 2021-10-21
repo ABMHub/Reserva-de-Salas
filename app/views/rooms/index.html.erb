@@ -20,15 +20,15 @@
         <td><%= room.location %></td>
         <td><%= room.students %></td>
         <td>
-          <%= link_to appointment_path(room.id) do %>
-            <%= image_tag "bin.png", class: "" %>
+          <%= link_to appointment_path(room.id), class: "icons" do %>
+            <%= image_tag "calendar.png" %>
           <% end %>
           <% if current_user.is_admin? %>
-            <%= link_to edit_room_path(room.id) do %>
-              <%= image_tag "bin.png", class: "" %>
+            <%= link_to edit_room_path(room.id), class: "icons" do %>
+              <%= image_tag "edit.png" %>
             <% end %>
-            <%= link_to room_path(room), method: :delete, data: {confirm: "Are you sure?"} do %>
-              <%= image_tag "bin.png", class: "" %>
+            <%= link_to room_path(room), class: "icons", method: :delete, data: {confirm: "Are you sure?"} do %>
+              <%= image_tag "bin.png" %>
             <% end %>
           <% end %>
         </td>
